@@ -1,0 +1,12 @@
+@charset "utf8";
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    padding: 20% 40%;
+    display: inline-block;
+    background-color: #1baff3;
+    color: white;
+}
