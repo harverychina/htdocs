@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax_get/post</title>
+</head>
+
+<body>
+    <form>
+        <label for="content">向服务器读取文件</label><button id="btn">提交</button>
+
+    </form>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#btn").click(function() {
+            $.get('get.php', function(data, status) {
+                alert("数据：" + data + "\n状态：" + status);
+            })
+        })
+    });
+</script>
+
+</html>
