@@ -10,18 +10,27 @@
 
 <body>
     <form>
-        <label for="content">向服务器读取文件</label><button id="btn">提交</button>
-
+        <label for="">向服务器读取文件</label><button id="get_btn">GET</button>
+        <label for="content"></label><input type="text" name="content" id="content"><button id="post_btn">POST</button>
     </form>
 </body>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("#btn").click(function() {
+        $("#get_btn").click(function() {
             $.get('get.php', function(data, status) {
                 alert("数据：" + data + "\n状态：" + status);
             })
-        })
+        });
+        $("#post_btn").click(function() {
+            var content = $("#content").val();
+
+            $.post('post.php', {
+                w: content
+            }, function(data, status) {
+                alert("数据是：" + data + "\n状态：" + status);
+            })
+        });
     });
 </script>
 
