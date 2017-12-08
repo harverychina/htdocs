@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"/Applications/MAMP/htdocs/tp5/public/../application/index/view/index/index.html";i:1512551720;s:81:"/Applications/MAMP/htdocs/tp5/public/../application/index/view/Layout/header.html";i:1512568945;s:81:"/Applications/MAMP/htdocs/tp5/public/../application/index/view/Layout/footer.html";i:1512568946;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"/Applications/MAMP/htdocs/tp5/public/../application/index/view/index/index.html";i:1512627978;s:81:"/Applications/MAMP/htdocs/tp5/public/../application/index/view/Layout/header.html";i:1512628385;s:81:"/Applications/MAMP/htdocs/tp5/public/../application/index/view/Layout/footer.html";i:1512628311;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="__STATIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/css/style.css">
     <title>首页</title>
 </head>
 
@@ -32,8 +33,8 @@
                     <li><a href="# ">联系我们</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right ">
-                    <li class="active "><a href="__URL__/reg ">注册</a></li>
-                    <li><a href="__URL__/login ">登录</a></li>
+                    <li class="active"><a href="__URL__/login ">登录</a></li>
+                    <li><a href="__URL__/reg ">注册</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -43,18 +44,13 @@
 </header>
             <div class="container">
                 <div class="row">
-                    <h2>首页</h2>
+                    <!-- center -->
                 </div>
             </div>
             <footer>
     <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container-fluid">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">1950-2017</a></li>
-                    <li><a href="#">&copy;广州市工贸技师学院</a></li>
-                </ul>
-            </div>
+        <div class="container">
+            <p class="text-mutld">&copy;广州市工贸技师学院</p>
         </div>
     </nav>
 </footer>
