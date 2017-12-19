@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 程序入门 --- DOM渲染02</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <input type="text" name="" id="" v-model="message">
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script type="text/javascript">
+    /*
+     * @功能1：完成输入框值与标签值双向绑定 
+     * @功能2:完成输入内容变成标签内容
+     */
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好，Vue.js！'
+        }
+    })
+</script>
+
+</html>

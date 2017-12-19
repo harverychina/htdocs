@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 程序入门 --- DOM渲染05</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>红色样式文字：{{ redText }}</p>
+        <!-- 效果同上 -->
+        <!-- <p>红色样式文字：<span v-text="redText"></span></p> -->
+        <p>红色文字：<span v-html="redText"></span></p>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    /* 
+     * @功能：使用v-text 、 v-html 和直接输出文字和样式效果
+     */
+    var app = new Vue({
+        el: '#app',
+        data: {
+            redText: "<span style='color:red'>你好，Vue.js！</span>"
+        }
+    })
+</script>
+
+</html>

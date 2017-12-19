@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 程序入门 --- DOM渲染04</title>
+</head>
+
+<body>
+    <div id="app">
+        <span v-once>这个将不会改变:{{ message }}</span><br>
+        <input type="text" name="" id="" v-model="message">
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    /* 
+     *@功能：v-once 设置文字不可编辑效果 
+     */
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: "Welcome to Vue.js!"
+        }
+    })
+</script>
+
+</html>
