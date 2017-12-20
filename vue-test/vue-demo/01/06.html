@@ -1,0 +1,43 @@
+/*
+ * @Author: 黄健聪 
+ * @Date: 2017-12-20 22:33:31 
+ * @Company: 广州市工贸技师学院信息服务产业系 
+ */
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 程序入门 --- DOM渲染06</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="book in books">{{ book.name }}</li>
+        </ul>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    /* 
+     * @功能：完成输出列表
+     */
+    new Vue({
+        el: "#app",
+        data: {
+            books: [{
+                name: '《PHP入门经典》'
+            }, {
+                name: '《MySQL数据库基础'
+            }, {
+                name: '《Vue.js经典'
+            }]
+        }
+    })
+</script>
+
+</html>
