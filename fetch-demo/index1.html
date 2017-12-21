@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fetch demo2</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="send">send</button>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script src="./vue-resource.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        methods: {
+            send: function() {
+                // alert("ok");
+
+                this.$http({
+                    url: "http://127.0.0.1/fetch-demo/post.php/{book}",
+                    method: 'jsonp',
+                    params: {
+                        book: 'vue',
+                        cat: 1
+                    },
+                    emulateJSON: true,
+                }).then(function(response){
+                    alert(response.body.slice(1, -1))
+                },function(error){
+                    alert('请求错误');
+                }).catch(function(error){
+                    alert('请求被拒绝')
+                })
+            }
+        }
+    })
+</script>
+</html>

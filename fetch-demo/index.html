@@ -17,41 +17,47 @@
 </body>
 <script>
     document.querySelector('#btn').onclick = function() {
-
-
-        let data = {
-            name: document.querySelector("#uid").value,
-            pwd: document.querySelector("#pwd").value,
-        };
-        // console.log(data.formdata);
-        // return false;
-
-        fetch("./post.php", {
-            headers: {
-                'content-type': 'application/json'
-            },
+        var init = {
             method: 'POST',
-            body: JSON.stringify(data)
-        }).then(response =>
-            response.json().then(json => ({
-                json,
-                response
-            }))
-        ).then(({
-            json,
-            response
-        }) => {
-            if (!response.ok) {
-                return Promise.reject(json);
-            }
-            return json;
-        }).then(
-            response => response,
-            error => error
-        );
-
-
+            body: new FormData(document.querySelector('#form1'))
+        }
+        fetch('./post.php', init)
+        .then(function(response){
+            // 输出提交内容
+            console.log(response);
+            resoponse.json().then(function(data){
+                // 返回内容
+                console.log(data);
+            });
+        })
     }
+
+        // fetch("./post.php", {
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     method: 'POST',
+            // body: JSON.stringify(data)
+            
+        // }
+        // }).then(response =>
+        //     response.json().then(json => ({
+        //         json,
+        //         response
+        //     }))
+        // ).then(({
+        //     json,
+        //     response
+        // }) => {
+        //     if (!response.ok) {
+        //         return Promise.reject(json);
+        //     }
+        //     return json;
+        // }).then(
+        //     response => response,
+        //     error => error
+        // );
+        // }
 </script>
 
 </html>
