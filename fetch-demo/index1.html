@@ -21,19 +21,22 @@
                 // alert("ok");
 
                 this.$http({
-                    url: "http://127.0.0.1/fetch-demo/post.php/{book}",
-                    method: 'jsonp',
+                    url: "http://127.0.0.1:8080/fetch-demo/post1.php",
+                    method: 'JSONP',
                     params: {
-                        book: 'vue',
-                        cat: 1
+                        cat: '1'
                     },
+                    // 设定返回方法
+                    jsonpCallback:'callback',
                     emulateJSON: true,
                 }).then(function(response){
-                    alert(response.body.slice(1, -1))
+                    // console.log(response);
                 },function(error){
+                    console.log(error);
                     alert('请求错误');
                 }).catch(function(error){
-                    alert('请求被拒绝')
+                    console.log(error);
+                    // alert('请求被拒绝');
                 })
             }
         }
