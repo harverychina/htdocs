@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js demo 计算属性用法 getter和setter</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    /*
+     * @Author: 黄健聪 
+     * @Date: 2017-12-25 21:18:08 
+     * @Company: 广州市工贸技师学院信息服务产业系 
+     * @fun：使用getter取值，使用setter写入值，通常getter方法读取一个计算属性，业务中很少用到setter
+     */
+    var app = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Jack',
+            lastName: 'Green'
+        },
+        computed: {
+            fullName: {
+                // getter 取值
+                get: function () {
+                    return this.firstName + ' ' + this.lastName;
+                },
+                // setter 写入
+                set: function (newValue) {
+                    var names = newValue.split(' ');
+                    this.firstName = names[0];
+                    this.lastName = names[names.length - 1];
+                }
+            }
+        }
+    });
+</script>
+
+</html>
