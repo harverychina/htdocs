@@ -1,8 +1,8 @@
-/*
+<!-- /*
  * @Author: 黄健聪 
  * @Date: 2017-12-20 22:22:58 
  * @Company: 广州市工贸技师学院信息服务产业系 
- */
+ */ -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +13,27 @@
     <title>Vue.js 程序入门 --- DOM渲染08</title>
 </head>
 <body>
-    
+    <div id="app">
+        <ol>
+            <li 
+            v-for="item in list" 
+            v-bind:todo="item" 
+            v-bind:key="item.id">
+        </li>
+        </ol>
+    </div>
 </body>
 <script src="../libs/vue.js"></script>
 <script>
-    
-
-    
+    var app = new Vue({
+        el: '#app',
+        data: {
+            list: [
+                {id: 0, text: 'A1'},
+                {id: 1, text: 'B2'},
+                {id: 2, text: 'C3'}
+            ]
+        }
+    })
 </script>
 </html>

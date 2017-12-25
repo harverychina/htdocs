@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 程序入门 --- DOM渲染10</title>
+</head>
+<body>
+    <div id="app">
+        {{ number / 10   }}
+        {{ isOK ? '确定' : '取消' }}
+        {{ text.split(',').reverse().join(',') }}
+        <span v-html="link"></span>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    /*
+    * @Author: 黄健聪 
+    * @Date: 2017-12-25 17:16:28 
+    * @Company: 广州市工贸技师学院信息服务产业系 
+    * @fun: 完成兼容js表达式运算、三元运算等操作
+    * @dec: v-html渲染具体html元素的内容，而不是纯文本，需要注意一下，防止XSS攻击，所以在服务端对用户提交的内容进行处理，一般可将尖括号“<>”转义，PHP中可以使用htmlspecialchars函数转义
+    */
+    var app = new Vue({
+        el: '#app',
+        data: {
+            number: 1000,
+            isOK: false,
+            text: '123,456',
+            link: '<a href="javascript:void(0)">Link</a>'
+        }
+    })
+</script>
+</html>
