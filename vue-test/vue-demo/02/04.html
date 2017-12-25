@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js demo 计算属性用法 依赖属性</title>
+</head>
+
+<body>
+    <div id="app1">
+        {{ text }}
+    </div>
+    <div id="app2">
+        {{ reversedText }}
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    /*
+     * @Author: 黄健聪 
+     * @Date: 2017-12-25 21:31:46 
+     * @Company: 广州市工贸技师学院信息服务产业系 
+     * @fun: app2依赖app2的值，这一点组件之间依赖将表现得很明显 
+     */
+    var app1 = new Vue({
+        el: '#app1',
+        data: {
+            text: '123,456'
+        }
+    });
+    var app2 = new Vue({
+        el: '#app2',
+        computed: {
+            reversedText: function () {
+                return app1.text.split(',').reverse().join(',');
+            }
+        }
+    })
+</script>
+
+</html>
