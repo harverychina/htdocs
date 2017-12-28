@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js v-for 实例 / 数组列表和排序</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- <li v-for="value in obj">{{ value }}</li> -->
+            <!-- <li v-for="(value, key) in obj">{{ key }} : {{ value }}</li> -->
+            <!-- <li v-for="(value, key, index) in obj">{{ index }}. {{ key }} : {{ value }}</li> -->
+        </ul>
+        <!-- <ul>
+            <li v-for="item in items">{{ item }}</li>
+        </ul> -->
+        <!-- 排序输出 -->
+        <!-- <ul>
+            <li v-for="item in sortItems">{{ item }}</li>
+        </ul> -->
+        <ul>
+            <template v-for="(value, key) in obj">
+                <li>
+                    <label :for="key">{{ key }}：</label>
+                    <input type="text" :placeholder="value" :id="key" />
+                </li>
+            </template>
+        </ul>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    function sortNumber(a, b) {
+        return a - b
+    }
+    var app = new Vue({
+        el: '#app',
+        // 排序
+        computed: {
+            sortItems: function () {
+                return this.items.sort(sortNumber);
+            }
+        },
+        data: {
+            obj: {
+                firstName: 'Airen',
+                lastName: 'Liao',
+                age: 30
+            },
+            // items: [1, 34, 89, 92, 45, 76, 3, 12]
+        },
+        // mounted() {
+        //     // 添加新属性和值 thisl.$set() / this.obj = Object.assign()
+        //     this.$set(this.obj, '职位', '码农'),
+        //         this.obj = Object.assign({}, this.obj, {
+        //             age: 27,
+        //             favoriteColor: 'Vue Green'
+        //         })
+        // },
+
+    })
+</script>
+
+</html>

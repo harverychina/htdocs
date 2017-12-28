@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue.js Todo示例</title>
+</head>
+
+<body>
+    <div id="todo">
+        <!-- 添加元素视图 -->
+        <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo" />
+        <!-- 元素内容 -->
+        <ul>
+            <li is="todoItem" v-for="(todo, index) in todos" v-bind:title="todo" v-on:remove="todos.splice(index, 1)"></li>
+        </ul>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    // 添加新元素视图组件
+    Vue.component('todoItem', {
+        template: `
+            <li>
+                {{ title }}
+                <button v-on:click="$emit('remove')">X</button>
+            </li>
+        `,
+        props: ['title']
+    })
+    new Vue({
+        el: '#todo',
+        data: {
+            newTodoText: '',
+            todos: [
+                'Hello World!',
+                'Hello Vue.js!',
+                'Welcome to learning for Vue.js Todo Demo!'
+            ]
+        },
+        methods: {
+            // 添加新元素
+            addNewTodo: function () {
+                this.todos.push(this.newTodoText)
+                this.newTodoText = ''
+            }
+        }
+    })
+</script>
+
+</html>
