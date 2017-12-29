@@ -5,20 +5,48 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Vue.js demo v-text / v-html</title>
+	<title>Vue.js demo 计算属性01</title>
 </head>
 
 <body>
 	<div id="app">
-		用户名：{{ name }}
+		<h2>学科计分器</h2>
+		<div v-for="subject in results">
+			<input type="text" v-model="subject.marks">
+			<span>{{ subject.name }}得分: {{ subject.marks }}</span>
+		</div>
+		<div>
+			总分: {{ totalMarks }}
+		</div>
 	</div>
 </body>
 <script src="../libs/vue.js"></script>
 <script>
 	var app = new Vue({
 		el: '#app',
-		data: {
-			name: 'Jack'
+		data() {
+			return {
+				results: [{
+					name: '英语',
+					marks: 70
+				}, {
+					name: '数学',
+					marks: 80
+				}, {
+					name: '历史',
+					marks: 90
+				}]
+			}
+		},
+		computed: {
+			totalMarks: function () {
+				let total = 0;
+				let me = this
+				for (let i = 0; i < me.results.length; i++) {
+					total += parseInt(me.results[i].marks)
+				}
+				return total
+			}
 		}
 	})
 </script>
