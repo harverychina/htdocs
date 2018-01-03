@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue.js 数组添加值</title>
+</head>
+
+<body>
+    <div id="app">
+        姓名：
+        <input v-model="name" type="text" />
+        <br> 年龄：
+        <input v-model="age" type="text" />
+        <br>
+        <div v-for="item in items">
+            {{ item.name }}:{{ item.age }}
+        </div>
+        <button @click="addItem">添加</button>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+</script>
+
+</html>
