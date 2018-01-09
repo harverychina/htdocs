@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 过滤器fitler 02</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="article in articles">
+                <h2>
+                    <a href="article.link">{{ article.title }}</a>
+                </h2>
+                <div class="summary">{{ article.summary | readMore(100, '...')}}</div>
+                <div class="action">
+                    <a href="aritcle.link">阅读更多</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    Vue.filter('readMore', function (text, length, suffix) {
+        return text.substring(0, length) + suffix
+    })
+
+    let app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                articles: [{
+                    title: 'css :focus-within',
+                    summary: 'CSS的世界真是一个神奇的世界。可能众多前端开发者听说过:focus并未听说过:focus-within。那么:focus-within是什么鬼。这篇文章，我们就说说:focus-within这个东东。在CSS中:focus-within是一个伪类，现在已经被列入到CSS选择器中（CSS Level 4 selector）。他就像你知道的:focus或者:hover。:focus-within能非常方便处理获取焦点状态。当元素本身或其后代元素获得焦点时，:focus-within伪类的元素就会有效。著作权归作者所有。',
+                    link: '//www.w3cplus.com/css/focus-within.html'
+                }, {
+                    title: '如何改变表单控件光标颜色',
+                    summary: '表单大家应该不陌生，当然了，今天并不是来聊怎么做表单或者处理表单的样式网格。而是来聊聊怎么改变表单控件中光标的颜色。不知道在大家心中，表单控件的光标颜色是根据color属性来控制的。那么如果需要用CSS来改变表单控件，比如说input或者textarea元素的光标颜色，应该怎么处理呢？著作权归作者所有。',
+                    link: '//www.w3cplus.com/css/focus-within.html'
+                }]
+            }
+        }
+    })
+</script>
+
+</html>
