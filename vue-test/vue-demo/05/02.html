@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js v-bind样式</title>
+</head>
+
+<body>
+    <div id="app">
+        <div :style="[styles, moreStyles]"></div>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                moreStyles: {
+                    'border-radius': '5px',
+                    'background-color': 'blue',
+                }
+            }
+        },
+        computed: {
+            styles: function () {
+                let height = 200;
+                return {
+                    width: (height / 2) + 'px',
+                    height: height + 'px'
+                }
+            }
+        }
+    })
+</script>
+
+</html>

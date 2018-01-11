@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js v-bind 样式</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="{{changeColor}}">Click Me ^-^</button>
+        <div :style="{'width': width, 'height': height, 'background-color': color}"></div>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                width: '200px',
+                height: '200px',
+                color: 'blue'
+            }
+        },
+        computed: {
+            changeColor: function () {
+                if (this.color = 'blue') {
+                    this.color = 'red'
+                } else {
+                    this.color = 'blue'
+                }
+            }
+        }
+    })
+</script>
+
+</html>

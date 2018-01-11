@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js + php 实例</title>
+</head>
+
+<body>
+    <div id="app" v-bind:style="styles.appStyle">
+        <h3>Vue.js + php 留言板</h3>
+        <form id="form">
+            <textarea v-bind:style='styles.textStyle' v-model='content'></textarea>
+            <button type="button" @click="submit" v-bind:style="styles.btnStyle">提交</button>
+        </form>
+        <table>
+            <tr v-for="item in results">
+                <td>{{item.id}}</td>
+                <td>{{item.content}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script src="../libs/axios.min.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                // 初始化文本变量 content，样式数组                
+                content: '',
+                results: '',
+                // 样式表
+                styles: {
+                    appStyle: [{
+                        width: '480' + 'px'
+                    }],
+                    textStyle: [{
+                        height: '160' + 'px',
+                        width: '100%',
+                        resize: 'none'
+                    }],
+                    btnStyle: [{
+                        height: '32' + 'px',
+                        width: '68' + 'px',
+                    }]
+                }
+            }
+        },
+        // 提交事件
+        methods: {
+            submit: function () {
+                let me = this;
+                axios({
+                    // 传递数据方式 GET / POST
+                    method: 'post',
+                    // 传递路径
+                    url: './post.php',
+                    // 数据内容 json
+                    data: {
+                        content: me.content
+                    }
+                }).then(function (res) {
+                    // 成功返回时
+                    console.log(res);
+                    if (res.data.success == 1) {
+                        alert('传递成功');
+                    } else {
+                        alert('数据出错');
+                    }
+                }).catch(function (err) {
+                    // 错误返回时
+
+                    console.log(err);
+                })
+            }
+        },
+        // 更新后，或者初始化后
+        mounted() {
+            // 获取服务器文件数据
+            axios.get("./get.php").then(response => {
+                console.log(response.data);
+                this.results = response.data;
+            })
+        }
+    })
+</script>
+
+</html>
