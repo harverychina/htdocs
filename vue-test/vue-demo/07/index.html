@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历</title>
+    <style>
+        #app {
+            width: 450px;
+            margin: 0 auto;
+        }
+
+        #title {
+            height: 48px;
+            padding: .5%;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        p {
+            height: 12px;
+            padding: .3%;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        span {
+            height: 16px;
+            display: block;
+            /* background-color: red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p id="title">姓名：{{ name }}</p>
+        <p>年龄：{{ age }}</p>
+        <p>籍贯：{{ city }}</p>
+        <p>手机：{{ mobile }}</p>
+        <p>技能：</p>
+        <ul>
+            <li v-for="item in skill">
+                {{ item.name }}
+                <span v-bind:style="{'width': item.res +'%','background': item.color}"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: '张小明',
+            age: '20',
+            city: '广东省广州市',
+            mobile: '13800138000',
+            skill: [{
+                    name: 'HTML',
+                    res: 100,
+                    color: '#f00'
+                },
+                {
+                    name: 'CSS',
+                    res: 88,
+                    color: '#0f0'
+                }, {
+                    name: 'JS',
+                    res: 70,
+                    color: '#00f'
+                }
+            ]
+        }
+    })
+</script>
+
+</html>
