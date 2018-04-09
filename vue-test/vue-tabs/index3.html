@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js 组件 3</title>
+</head>
+<body>
+	<div id="app">
+		<my-component></my-component>
+		<my-component></my-component>
+		<my-component></my-component>
+	</div>
+</body>
+<script src="vue.js"></script>
+<script>
+	var data = {
+		counter: 0
+	};
+
+	Vue.component('my-component', {
+		template: '<button v-on:click="counter++">{{ counter }}</button>',
+		data: function() {
+			// 三个按钮的值一起变
+			// return data;
+			// 三个按钮独立相互不影响
+			return {
+				counter: 0
+			}
+		}
+	});
+
+	var vm = new Vue({
+		el: "#app"
+	})
+</script>
+</html>

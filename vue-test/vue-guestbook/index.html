@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<h3>Vue.js 留言板</h3>
+		<input type="text" v-model="username" v-on:keyup.enter = "checkUser" placeholder="请输入昵称">
+		<textarea v-model="content" placeholder="请输入留言内容"></textarea>
+		<button v-on:click="addMsg">发布</button>
+		<div id="list">
+			<span v-show="!list.length">当前没有留言</span>
+			<div v-show="list.length" v-for="item in list">
+				<p>{{item.username}}:&nbsp;&nbsp;{{item.content}}<a href="#" v-on:click="delMsg(item)">删除</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+</html>

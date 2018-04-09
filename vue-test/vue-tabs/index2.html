@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js 组件 2</title>
+</head>
+<body>
+	<div id="app">
+		<my-component></my-component>
+	</div>
+</body>
+<script src="vue.js"></script>
+<script>
+	Vue.component('my-component', {
+		template: '<div>{{ message }}</div>',
+		data: function() {
+			return {
+				message: '子组件内容'
+			}
+		}
+	})
+	var vm = new Vue({
+		el: "#app"		
+	})
+</script>
+</html>

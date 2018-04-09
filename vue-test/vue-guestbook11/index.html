@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue.js 留言列表</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!--
+		添加三个vue子组件分别是：
+		v-input      输入留言昵称
+		v-textarea   输入留言内容
+		list         显示留言内容
+	-->
+	<!-- 这个指令保持在元素上直到关联实例结束编译 -->
+	<div id="app" v-cloak style="width: 500px; margin: 0 auto;">
+		<div class="message">
+			<v-input v-model="username"></v-input>
+			<v-textarea v-model="message" ref="message"></v-textarea>
+			<button @click="handleSend">发布</button>
+		</div>
+	    <list :list="list" @reply="handleReply"></list>
+	</div>
+</body>
+<script src="vue.js"></script>
+<!-- 输入子组件 -->
+<script src="input.js"></script>
+<!-- 显示子组件 -->
+<script src="list.js"></script>
+<!-- 首页父组件 -->
+<script src="index.js"></script>
+</html>
