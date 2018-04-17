@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue.js child to parent</title>
+</head>
+<body>
+	<div id="app">
+		<v-text v-bind:title=title></v-text>
+		{{ total }}
+	</div>
+</body>
+<script src="vue.js"></script>
+<script>
+	Vue.component('vText', {
+		// 接收父组件的值
+		props: {
+			title: {
+				type: String,
+				required: true
+			}
+		},
+		data: {
+			count: 0
+		},
+		template: '<div>{{ title }}<button v-on:click="add">加1</button></div>',
+		methods: {
+			add: function() {
+				// 响应事件
+				this.count += 1;
+				// this.$emit(add);
+			}
+		}
+	});
+	var vm = new Vue({
+		el: "#app",
+		data: {
+			return: {			
+				title: '你好，世界!',
+				total: 0
+			}
+		}
+	})
+</script>
+</html>
