@@ -1,0 +1,26 @@
+@charset: 'utf8';
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header h3 {
+	height: 30px;
+	font-size: 24px
+}
+
+header ul {
+	background-color: blue;
+}
+header ul li {
+	list-style-type: none;
+}
+
+header ul li {
+	height: 24px;
+	width: 68px;
+	text-align: center;
+	padding: 2px 8px;
+	display: inline-block;
+	color: #fff;
+}
