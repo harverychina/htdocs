@@ -1,0 +1,77 @@
+@charset "utf8";
+/* 容器 */
+.transfer {
+    line-height: 1.5;
+    position: relative;
+}
+/* 容器列表 */
+.transfer-list {
+    display: inline-block;
+    width: 280px;
+    height: 210px;
+    font-size: 12px;
+    vertical-align: middle;
+    position: relative;
+    padding-top: 35px;
+}
+/* 容器头部 */
+.transfer-header {
+    box-sizing: border-box;
+    padding: 8px 16px;
+    background: #f9fafc;
+    color: #495060;
+    border: 1px solid #dddee1;
+    border-bottom: 1px solid #e9eaec;
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* 容器头部标题 */
+.transfer-header-title {
+    padding-left: 4px;
+}
+/* 容器头部统计 */
+.transfer-header-count {
+    float: right;
+    margin-right: 4px;
+}
+/* 容器主体内容 */
+.transfer-list-body {
+    height: 100%;
+    border: 1px solid #dddee1;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    position: relative;
+    overflow: hidden;
+}
+/* 容器主体列表 */
+.transfer-list-content {
+    height: 100%;
+    padding: 4px 0;
+    overflow: auto;
+}
+/* 容器列表的选项 */
+.transfer-list-content-item {
+    margin: 0;
+    line-height: normal;
+    padding: 7px 16px;
+    clear: both;
+    color: #495060;
+    white-space: nowrap;
+    list-style: none;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 容器之间的操作按钮 */
+.transfer-operation {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 16px;
+    vertical-align: middle;
+}

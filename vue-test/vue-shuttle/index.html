@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js穿梭框</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="transfer" id="app">
+        <div class="transfer-list">
+            <div class="transfer-header">
+                <input type="checkbox" name="">
+                <span class="transfer-header-title">
+                    源列表
+                </span>
+                <span class="transfer-header-count">
+                    6/10
+                </span>
+            </div>
+
+            <div class="transfer-list-body">
+                <ul class="transfer-list-content">
+                    <li class="transfer-list-content-item">
+                        <input type="checkbox" name="">
+                        <span>hellohellohellohellohellohello</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="transfer-operation">
+            <p><input type="button" value="<" disabled /></p>
+            <p><input type="button" value=">" disabled /></p>
+        </div>
+
+        <div class="transfer-list">
+            <div class="transfer-header">
+                <input type="checkbox" name="">
+                <span class="transfer-header-title">
+                    目标列表
+                </span>
+                <span class="transfer-header-count">
+                    6
+                </span>
+            </div>
+
+            <div class="transfer-list-body">
+                <ul class="transfer-list-content">
+                    <li class="transfer-list-content-item">
+                        <input type="checkbox" name="">
+                        <span>hellohellohellohello</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    let data = {
+        // 源列表
+        originData: [
+            {
+                id: 1000,
+                title: 'js课程',
+                checked: false
+            },
+            {
+                id: 1001,
+                title: 'css课程',
+                checked: false
+            },
+            {
+                id: 1002,
+                title: 'vue课程',
+                checked: false
+            },
+            {
+                id: 1003,
+                title: 'react课程',
+                checked: false
+            }
+        ],
+        // 目标列表
+        targetData: [
+            {
+                id: 105660,
+                title: 'Node课程',
+                checked: true
+            },{
+                id: 11088881,
+                title: 'canvas课程',
+                checked: true
+            }
+        ]
+    }
+</script>
+</html>

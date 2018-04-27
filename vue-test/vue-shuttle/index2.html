@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js穿梭框</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div class="transfer" id="app">
+        <!-- vue 构建组件开始-->
+        <transfer-list :data="originData" title="源列表"></transfer-list>
+        <!--<div class="transfer-list">-->
+            <!--<div class="transfer-header">-->
+                <!--<input type="checkbox" name="">-->
+                <!--<span class="transfer-header-title">-->
+                    <!--源列表-->
+                <!--</span>-->
+                <!--<span class="transfer-header-count">-->
+                    <!--6/10-->
+                <!--</span>-->
+            <!--</div>-->
+
+            <!--<div class="transfer-list-body">-->
+                <!--<ul class="transfer-list-content">-->
+                    <!--<li class="transfer-list-content-item">-->
+                        <!--<input type="checkbox" name="">-->
+                        <!--<span>hellohellohellohellohellohello</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!-- 构建组件结束 -->
+        <div class="transfer-operation">
+            <p><input type="button" value="<"  @click="targetToOrigin" :disabled="targetHasChecked"/></p>
+            <p><input type="button" value=">"  @click="originToTarget" :disabled="targetHasChecked"/></p>
+        </div>
+        <!-- 构建组件开始-->
+        <transfer-list :data="targetData" title="目标列表"></transfer-list>
+        <!--<div class="transfer-list">-->
+            <!--<div class="transfer-header">-->
+                <!--<input type="checkbox" name="">-->
+                <!--<span class="transfer-header-title">-->
+                    <!--目标列表-->
+                <!--</span>-->
+                <!--<span class="transfer-header-count">-->
+                    <!--6-->
+                <!--</span>-->
+            <!--</div>-->
+
+            <!--<div class="transfer-list-body">-->
+                <!--<ul class="transfer-list-content">-->
+                    <!--<li class="transfer-list-content-item">-->
+                        <!--<input type="checkbox" name="">-->
+                        <!--<span>hellohellohellohello</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!-- 构建组件结束-->
+    </div>
+</body>
+<script>
+    let data = {
+        // 源列表
+        originData: [
+            {
+                id: 1000,
+                title: 'js课程',
+                checked: false
+            },
+            {
+                id: 1001,
+                title: 'css课程',
+                checked: false
+            },
+            {
+                id: 1002,
+                title: 'vue课程',
+                checked: false
+            },
+            {
+                id: 1003,
+                title: 'react课程',
+                checked: false
+            }
+        ],
+        // 目标列表
+        targetData: [
+            {
+                id: 105660,
+                title: 'Node课程',
+                checked: true
+            },{
+                id: 11088881,
+                title: 'canvas课程',
+                checked: true
+            }
+        ]
+    }
+
+    // 构建组件
+    Vue.component('transfer-list', {
+        // 获取主组件的数据(列表和标题)
+        props: ['data', 'title'],
+        template: `<div class="transfer-list">
+            <div class="transfer-header">
+                <input type="checkbox" :disabled="!data.length" v-model="isCheckedAll">
+                <span class="transfer-header-title">
+                    {{title}}
+                </span>
+                <span class="transfer-header-count">
+                    {{this.data.length}}
+                </span>
+            </div>
+
+            <div class="transfer-list-body">
+                <ul class="transfer-list-content">
+                    <li v-for="item in data"  class="transfer-list-content-item">
+                        <input type="checkbox" v-model="item.checked">
+                        <span>{{item.title}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>`,
+        computed: {
+            // 全选
+            isCheckedAll: {
+                get() {
+                    return this.data.length && !this.data.find(item => !item.checked)
+                },
+                set (newValue) {
+                    this.data.forEach(item => item.checked = newValue)
+                }
+            },
+            checkedItem() {
+                return this.data.filter(item => item.checked)
+            }
+        }
+    })
+
+    let vm =  new Vue({
+        el: '#app',
+        data: {
+            // es6写法，扩展数据(遍历)
+            ...data
+        },
+        computed: {
+            targetHashChecked() {
+                return !this.targetData.find(item => item.checked)
+            },
+            originHashChecked() {
+                return !this.originData.find(item => item.checked)
+            }
+        },
+        methods: {
+            // 移动元素公共方法
+            filterData(oneData, twoData) {
+                let targetChecked = oneData.filter(item => item.checked).map(
+                    item => ({
+                        ...item,
+                        checked: false
+                    }))
+                twoData.push(...targetChecked)
+                return oneData.filter(item => !item.checked);
+            },
+            // 移动元素到源列表
+            targetToOrigin() {
+                this.targetData = this.filterData(this.targetData, this.originData);
+            },
+            // 移动元素到目标列表
+            originToTarget() {
+                this.originData = this.filterData(this.originData, this.targetData);
+            }
+        }
+    })
+
+
+</script>
+</html>
