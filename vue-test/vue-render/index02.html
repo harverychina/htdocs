@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue.js Render函数01</title>
+</head>
+
+<body>
+    <div id="app">
+        <template-heading :level="1">
+            <div>
+                <h1 v-if="level === 1">
+                    <slot></slot>
+                </h1>
+            </div>
+        </template-heading>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('template-heading', {
+        render: function (createElement) {
+            return createElement(
+                'h' + this.level,
+                this.$slots.default
+            )
+        },
+        props: {
+            level: {
+                type: Number,
+                required: true
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app',
+        data: {
+            level: 1
+        }
+    })
+</script>
+
+</html>
