@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>环型菜单 vue.js menu ring</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css" media="screen" tyep="text/css">
+</head>
+<body>
+	<div class="radmenu" id="app">
+		<a href="#" class="show">开始</a>
+		<ul>
+			<menu-list :data="menu"></menu-list>
+			<!-- <li v-for="item in data">
+				<a href="#" class="">菜单 1</a>
+				<ul>
+					<li><a href="#">子菜单 1</a></li>
+					<li><a href="#">子菜单 2</a></li>
+					<li><a href="#">子菜单 3</a></li>
+					<li><a href="#">子菜单 4</a></li>
+					<li><a href="#">子菜单 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="">菜单 2</a>
+				<ul>
+					<li><a href="#">子菜单 1</a></li>
+					<li><a href="#">子菜单 2</a></li>
+					<li><a href="#">子菜单 3</a></li>
+					<li><a href="#">子菜单 4</a></li>
+					<li><a href="#">子菜单 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="">菜单 3</a>
+				<ul>
+					<li><a href="#">子菜单 1</a></li>
+					<li><a href="#">子菜单 2</a></li>
+					<li><a href="#">子菜单 3</a></li>
+					<li><a href="#">子菜单 4</a></li>
+					<li><a href="#">子菜单 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="">菜单 4</a>
+				<ul>
+					<li><a href="#">子菜单 1</a></li>
+					<li><a href="#">子菜单 2</a></li>
+					<li><a href="#">子菜单 3</a></li>
+					<li><a href="#">子菜单 4</a></li>
+					<li><a href="#">子菜单 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="">菜单 5</a>
+				<ul>
+					<li><a href="#">子菜单 1</a></li>
+					<li><a href="#">子菜单 2</a></li>
+					<li><a href="#">子菜单 3</a></li>
+					<li><a href="#">子菜单 4</a></li>
+					<li><a href="#">子菜单 5</a></li>
+				</ul>
+			</li> -->
+		</ul>
+	</div>
+</body>
+<!-- <script src="index.js"></script> -->
+<script src="vue.js"></script>
+<script>
+	let data = {
+		menu: [{
+				title: '菜单1',
+				subMenu:[
+					{subTitle: '子菜单1'},
+					{subTitle: '子菜单2'},
+					{subTitle: '子菜单3'},
+					{subTitle: '子菜单4'},
+					{subTitle: '子菜单5'},
+				]
+			},{
+				title:'菜单2',
+				subMenu: [
+					{subTitle: '子菜单1'},
+					{subTitle: '子菜单2'},
+					{subTitle: '子菜单3'},
+					{subTitle: '子菜单4'},
+					{subTitle: '子菜单5'},
+				]
+			}]
+	}
+
+	Vue.component('menu-list', {
+		props: ['data'],
+		template:`<li v-for="item in data">
+				<a href="#" class="">菜单 1 {{ title }}</a>
+				<ul>
+					<li><a href="#">子菜单 1</a></li>
+					<li><a href="#">子菜单 2</a></li>
+					<li><a href="#">子菜单 3</a></li>
+					<li><a href="#">子菜单 4</a></li>
+					<li><a href="#">子菜单 5</a></li>
+				</ul>
+			</li>` 
+	})
+
+	let vm = new Vue({
+		el: "#app",
+		data: {
+			...data
+		}
+	})
+</script>
+</html>
