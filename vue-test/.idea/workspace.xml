@@ -17,8 +17,8 @@
       <file leaf-file-name="index2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue-shuttle/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="103" column="11" lean-forward="true" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
+            <state relative-caret-position="156">
+              <caret line="85" column="14" lean-forward="true" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -63,15 +63,18 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/vue-sample/node_modules" />
+    <handled-path value="$PROJECT_DIR$/vue-vuex/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/vue-sample/package.json" />
+      <path value="$PROJECT_DIR$/vue-vuex/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="x" value="43" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="1397" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectView">
@@ -85,11 +88,6 @@
             <path>
               <item name="vue-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue-test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-test" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-shuttle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -151,17 +149,19 @@
       <workItem from="1525398425679" duration="134000" />
       <workItem from="1525682379079" duration="19000" />
       <workItem from="1525782856678" duration="153000" />
+      <workItem from="1530188262605" duration="401000" />
+      <workItem from="1530189204430" duration="138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9834000" />
+    <option name="totallyTimeSpent" value="10373000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="23" width="1399" height="877" extended-state="6" />
+    <frame x="43" y="23" width="1397" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21372409" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21331425" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -192,6 +192,20 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vue-shuttle/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2640">
+          <caret line="110" column="52" lean-forward="true" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-shuttle/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2472">
+          <caret line="103" column="11" lean-forward="true" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue-shuttle/index2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2184">
@@ -287,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue-shuttle/index2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="103" column="11" lean-forward="true" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
+        <state relative-caret-position="156">
+          <caret line="85" column="14" lean-forward="true" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
         </state>
       </provider>
     </entry>
