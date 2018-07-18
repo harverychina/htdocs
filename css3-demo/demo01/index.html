@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 段落每行渐变色文本效果</title>
+    <style>
+        .box p {
+            /* background-image: linear-gradient(to right, deeppink, dodgerblue); */
+            background-image: linear-gradient(135deg, deeppink, dodgerblue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>
+            W3cplus是一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文；其文章范围广泛，主要以CSS3、HTML5、JavaScript、Vue、React、Mobile、动画等教程、译文和案例为主。
+        </p>
+    </div>
+</body>
+
+</html>
