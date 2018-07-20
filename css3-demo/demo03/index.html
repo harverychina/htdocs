@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3 文本溢出</title>
+    <style>
+        .text-overflow-clip {
+            width: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            /* clip属性值时，文本没有被裁切，div自动撑高以适应内容的高度。 */
+            text-overflow: clip;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-overflow-clip">
+        Text-overflow属性值为clip的实战，看看他能不能截取文本？如何截取文本？会怎么显示？
+    </div>
+</body>
+
+</html>
