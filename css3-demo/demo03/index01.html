@@ -11,8 +11,8 @@
             width: 100px;
             padding: 10px;
             border: 1px solid #ccc;
-            /* clip属性值时，文本没有被裁切，div自动撑高以适应内容的高度。 */
-            text-overflow: clip;
+            /* 当文本长度受到元素容器的大小限制无法显示完整，将用'...'来代替隐藏部分 */
+            text-overflow: ellipsis;
             /* 强制不换行 */
             white-space: nowrap;
             /* 溢出隐藏 */

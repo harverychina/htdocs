@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3 文本换行 white-space</title>
+    <style>
+        p {
+            float: left;
+            width: 150px;
+            margin: 10px;
+            font-size: 16px;
+            font-family: simsun;
+            border: 1px solid #ccc;
+            /* 自动换行 normal 默认*/
+            /* white-space: normal; */
+            /* 自动换行 pre 西文有效果*/
+            /* white-space: pre; */
+            /* 自动换行 nowrap 多余空白*/
+            /* white-space: nowrap; */
+            /* 自动换行 pre-line */
+            /* white-space: pre-line; */
+            /* 自动换行 pre-wrap*/
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <p>I have multiple spaces and a line break</p>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3 文本换行技巧汇总</title>
+    <style>
+        pre {
+            float: left;
+            width: 150px;
+            margin: 10px;
+            font-size: 16px;
+            font-family: simsun;
+            border: 1px solid #ccc;
+            white-space: pre;
+            white-space: pre-wrap;
+            word-spacing: pre-line;
+            white-space: -pre-wrap;
+            white-space: -moz-pre-wrap !important;
+            white-space: -hp-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* 表格文本换行 */
+
+        table {
+            table-layout: fixed;
+            /* width: **px; */
+        }
+
+        table td {
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+
+        /* 除了pre、td标签外，自动换行*/
+
+        /* element1 {
+            overflow: hidden;
+            word-wrap: break-word;
+        } */
+
+        /* 标签内容强制不换行 */
+
+        /* element2 {
+            white-space: nowrap;
+            word-break: keep-all;
+        } */
+    </style>
+</head>
+
+<body>
+    <pre>I have multiple spaces and a line break</pre>
+</body>
+
+</html>
