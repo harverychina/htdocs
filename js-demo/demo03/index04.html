@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js demo 04</title>
+</head>
+<body>
+	<script>
+		function foo(obj) {
+			with(obj)  {
+				a = 2;
+			}
+		}
+
+		var o1 = {
+			a : 3
+		};
+
+		var o2 = {
+			b : 3
+		};
+
+		foo(o1) ;
+		console.log(o1.a);
+
+		foo(o2);
+		// underfined
+		console.log(o2.a);
+		// error a 被泄漏到全局作用域上了！
+		console.log(a);
+	</script>
+</body>
+</html>

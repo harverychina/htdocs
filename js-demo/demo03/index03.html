@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js demo 03</title>
+</head>
+<body>
+	<script>
+		function foo(str) {
+			"use strict";
+			eval(str);
+			// ReferenceError: a is not defined
+			console.log(a);
+		}
+		foo("var a = 2");
+	</script>
+</body>
+</html>

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
-	<title>js demo 02</title>
+	<title>js demo 03</title>
 </head>
-
 <body>
 	<script>
 		function foo(a) {
-			var b = a;
-			console.log(a + b);
+			var b = a * 2;
+
+			function bar(c) {
+				console.log(a, b, c);
+			}
+
+			bar(b * 3);
 		}
 
-		// var b = 2;
-		var c = foo(2);
-		// foo(2);
+		foo(2);
 	</script>
 </body>
-
 </html>
