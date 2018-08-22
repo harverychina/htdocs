@@ -13,7 +13,16 @@
 
 <body>
     <div id="example"></div>
-    <script type="text/babel"></script>
+    <script type="text/babel">
+        var names = ['张三', '李四', '王五', '陈六'];
+        ReactDOM.render(
+            <div>{
+                names.map(function(name, index){
+                    return <div key={index}>Hello, {name}!</div>
+                })
+            }</div>, document.getElementById("example")
+        );
+    </script>
 </body>
 
 </html>

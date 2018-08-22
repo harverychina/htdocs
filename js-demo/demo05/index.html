@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>js demo 05</title>
 </head>
 <body>
-$END$
+<script>
+
+    // 变量b和函数doSomethingElse()应该是doSomething()内部具体实现的"私有"内容。
+    // 给予b和doSometingElse()"访问权限"不仅没有必要，而且可能是"危险"的！
+
+    function doSomething(a) {
+        b = a + doSomethingElse( a * 2 );
+        console.log( b * 3 );
+    }
+
+    function doSomethingElse(a) {
+        return a - 1;
+    }
+
+    var b;  // 访问权限
+    doSomething(2); // 15
+
+</script>
 </body>
 </html>
