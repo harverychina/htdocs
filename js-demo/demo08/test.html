@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 作用域</title>
+</head>
+<body>
+	<script>
+		let i = (setTimeout( () => console.log(i), 2333), 0);
+		// 当前 let 定义的i 与 console.log()中的i不是同一个变量，说明了let作用域的问题
+		for (let i=(setTimeout( () => console.log(i), 2333)); i < 2; i++){
+
+		}
+	</script>
+</body>
+</html>
