@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>纯js实现tab选项卡</title>
 	<style>
-		#div1 .active { background-color: #f58f98; }
-		#div1 div { width: 200px;height: 200px;background-color: #72baa7; color: white; border: 1px solid pink; display: none; }
+		#div1 .active {
+			background-color: #f58f98;
+		}
+
+		#div1 div {
+			width: 200px;
+			height: 200px;
+			background-color: #72baa7;
+			color: white;
+			border: 1px solid pink;
+			display: none;
+		}
 	</style>
 </head>
+
 <body>
 	<div id="div1">
 		<input type="button" name="button" value="1">
@@ -21,32 +33,33 @@
 	</div>
 </body>
 <script>
-	window.onload = function() {
+	window.onload = function () {
 		// 获取id为div1的对象
 		var oDiv = document.getElementById("div1");
 		// 获取该对象下的input元素
 		var aBtn = oDiv.getElementsByTagName("input");
-        // 获取该对象下的div元素
+		// 获取该对象下的div元素
 		var aDiv = oDiv.getElementsByTagName("div");
-        // 遍历所有按钮
-		for(let i = 0; i < aBtn.length; i ++) {
+		// 遍历所有按钮
+		for (let i = 0; i < aBtn.length; i++) {
 			// 给每个按钮创建索引值 index
 			aBtn[i].index = i;
-            // 给所有的按钮加上一个事件
-			aBtn[i].onclick = function() {
-                // 当按钮被点击时
-				for(let i = 0; i < aBtn.length; i ++) {
-                    // 所有按钮class为空
+			// 给所有的按钮加上一个事件
+			aBtn[i].onclick = function () {
+				// 当按钮被点击时
+				for (let i = 0; i < aBtn.length; i++) {
+					// 所有按钮class为空
 					aBtn[i].className = "";
-                    // 所有对应的div被隐藏　
+					// 所有对应的div被隐藏　
 					aDiv[i].style.display = "none";
 				};
-                // 当前点击的按钮加上class
+				// 当前点击的按钮加上class
 				this.className = "active";
-                // 当前对应按钮索引的div显示出来
+				// 当前对应按钮索引的div显示出来
 				aDiv[this.index].style.display = "block";
 			};
 		};
 	};
 </script>
+
 </html>
